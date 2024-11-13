@@ -1,8 +1,9 @@
 package org.ecommerce.config;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+
 
 public class WebDriverConfig {
 
@@ -10,12 +11,9 @@ public class WebDriverConfig {
 
     public static WebDriver initializeDriver() {
         if (driver == null) {
-            System.setProperty("webdriver.chrome.driver", "PATH");
+            WebDriverManager.edgedriver().setup();
 
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--start-maximized");
-
-            driver = new ChromeDriver(options);
+            driver = new EdgeDriver();
         }
         return driver;
     }
