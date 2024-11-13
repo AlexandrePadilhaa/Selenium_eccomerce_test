@@ -8,9 +8,9 @@ public class LoginPage {
 
     private static WebDriver driver;
 
-    By usernameField = By.id("user-name");
+    By usernameField = By.id("username");
     By passwordField = By.id("password");
-    By loginButton = By.id("login-button");
+    By loginButton = By.id("submit");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -32,8 +32,10 @@ public class LoginPage {
     }
 
     public void login(String username, String password) {
+
         enterUsername(username);
         enterPassword(password);
+
         clickLoginButton();
     }
 }

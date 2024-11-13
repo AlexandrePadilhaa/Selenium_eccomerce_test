@@ -15,7 +15,7 @@ public class EcommerceTest {
     private WebDriver driver;
     private LoginPage loginPage;
 
-    private final String URL = "https://www.saucedemo.com/";
+    private final String URL = "https://practicetestautomation.com/practice-test-login/";
 
     @Before
     public void setUp() {
@@ -29,11 +29,31 @@ public class EcommerceTest {
     @Test
     public void testLogin() {
 
+        loginPage.login("student","Password123");
         assertTrue(true);
+
+        String currentUrl = driver.getCurrentUrl();
+
+        assertTrue(currentUrl.contains("practicetestautomation.com/logged-in-successfully/"));
+        //assertTrue(true);
     }
 
     @After
     public void tearDown() {
         WebDriverConfig.closeDriver();
+    }
+
+    public static void main(String[] args) {
+        EcommerceTest ecommerceTest = new EcommerceTest();
+
+        try {
+            ecommerceTest.setUp();
+            ecommerceTest.testLogin();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            ecommerceTest.tearDown();
+        }
     }
 }
