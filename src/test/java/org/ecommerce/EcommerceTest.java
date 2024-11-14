@@ -37,7 +37,6 @@ public class EcommerceTest {
         String currentUrl = driver.getCurrentUrl();
 
         assertTrue(currentUrl.contains("https://www.saucedemo.com/inventory.html"));
-        //Logger.debug("Login completed, accessing page: ", currentUrl);
     }
 
     @Test
@@ -50,7 +49,6 @@ public class EcommerceTest {
         String currentUrl = driver.getCurrentUrl();
 
         assertTrue(currentUrl.contains("https://www.saucedemo.com/cart.html"));
-        //Logger.debug("Login completed, accessing page: ", currentUrl);
     }
 
     @Test
@@ -62,8 +60,7 @@ public class EcommerceTest {
 
         String currentUrl = driver.getCurrentUrl();
 
-        //assertTrue(currentUrl.contains("https://www.saucedemo.com/checkout-step-one.html"));
-        System.out.println("passou aqui");
+        assertTrue(currentUrl.contains("https://www.saucedemo.com/checkout-step-one.html"));
     }
 
     @Test
@@ -77,7 +74,6 @@ public class EcommerceTest {
         String currentUrl = driver.getCurrentUrl();
 
         assertTrue(currentUrl.contains("https://www.saucedemo.com/checkout-complete.html"));
-        //Logger.debug("Login completed, accessing page: ", currentUrl);
     }
 
     @Test
@@ -88,8 +84,7 @@ public class EcommerceTest {
 
         String currentUrl = driver.getCurrentUrl();
 
-        //assertTrue(currentUrl.contains("https://www.saucedemo.com/checkout-complete.html"));
-        //Logger.debug("Login completed, accessing page: ", currentUrl);
+        assertTrue(currentUrl.contains("https://www.saucedemo.com/checkout-complete.html"));;
     }
 
     @After
@@ -112,7 +107,6 @@ public class EcommerceTest {
             ecommerceTest.testFillInformation();
 
             ecommerceTest.testTakeScreenshot();
-
 
         } catch (Exception e) {
             e.printStackTrace();
